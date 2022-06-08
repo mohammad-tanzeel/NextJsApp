@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Real Estate</title>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<meta name="description" content="Website description" />
+	<meta name="robots" content="noindex, nofollow" /><!-- change into index, follow -->
+	
+	<link rel="stylesheet" href="styles/slick.css" />
+	<link rel="stylesheet" href="fonts/iconmoon/fonts.css" />
+	<link rel="stylesheet" href="styles/main.css" />
+</head>
+
+<body>
+	<!--  / wrapper \ -->
+	<div id="wrapper">
+
+		<!--  / main container \ -->
+		<div id="mainCntr">
+			<!--  / header \ -->
+			<header class="container">
+				<div class="sidebar-box" id="sidebar-box">
+					<div class="hamberger-box" onClick="sideMenu()"> <button class="hamberger-menu"></button> </div>
+					<div class="sidebar">
+					  <button class="close-btn" onClick="sideMenu()"></button>
+					  <div class="search-box">
+						<input type="text" class="search-txt" placeholder="Search" />
+						<button class="search"><svg fill="none" height="24" stroke="#f7f7f8" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><circle cx="10.5" cy="10.5" r="7.5"/> <line x1="21" x2="15.8" y1="21" y2="15.8"/> </svg></button>
+					  </div>
+					  <div class="sidebar-menu">
+						<div class="directLink"><a href="#" title="HOME">HOME</a></div>
+						<div class="directLink"><a href="#" title="ELECTIONS">ELECTIONS</a></div>
+						<div class="directLink"><a href="#" title="INDIA">INDIA</a></div>
+						<div class="directLink"><a href="#" title="WORLD">WORLD</a></div>
+						<div class="directLink">
+							<a href="javascript:void(0)" title="NORTH EAST INDIA" class="dropdown-menu">NORTH EAST INDIA</a>
+						  <div class="dropdown-item">
+							  <a href="#" title="Arunachal Pradesh">Arunachal Pradesh</a>
+							  <a href="#" title="Mizoram">Mizoram</a>
+							  <a href="#" title="Assam">Assam</a>
+							  <a href="#" title="Nagaland">Nagaland</a>
+							  <a href="#" title="Manipur">Manipur</a>
+							  <a href="#" title="Meghalaya">Tripura</a>
+							  <a href="#" title="Meghalaya">Meghalaya</a>
+						  </div>
+						</div>          
+						<div class="directLink">
+							<a href="javascript:void(0)" title="NORTH EAST INDIA" class="dropdown-menu">PHOTOS</a>
+						  <div class="dropdown-item">
+							  <a href="#" title="Actor">Actor</a>
+							  <a href="#" title="Nature">Nature</a>
+							  <a href="#" title="Food">Food</a>
+							  <a href="#" title="Flower">Flower</a>
+							  <a href="#" title="Health">Health</a>
+							  <a href="#" title="Meghalaya">Tripura</a>
+						  </div>
+						</div>
+						<div class="directLink">
+							<a href="javascript:void(0)" title="VIDEOS" class="dropdown-menu">VIDEOS</a>
+						  <div class="dropdown-item">
+							  <a href="#" title="Actor">Education</a>
+							  <a href="#" title="Nature">Property</a>
+							  <a href="#" title="Food">Food</a>
+							  <a href="#" title="Flower">Flower</a>
+							  <a href="#" title="Health">Health</a>
+							  <a href="#" title="Meghalaya">Tripura</a>
+						  </div>
+					   </div>
+					  </div>
+					</div>
+					<div class="overlay" onClick="sideMenu()"></div>
+					
+				</div>
+			  </header>
+		  <style>
+			  header{clear:both; display:block;}.container{max-width:1200px; width:100%; margin:0 auto;}
+.hamberger-box{padding:20px; display:inline-block; cursor:pointer; line-height:0;}
+.hamberger-menu{display:inline-block; vertical-align:top; border-top:2px solid #000; border-bottom:2px solid #000; border-left:none; border-right:none; height:12px; width:16px; position:relative; background-color:transparent;}
+.hamberger-menu:after{content:''; position:absolute; top:43%; left:0; width:16px; height:2px; background-color:#000;}
+.sidebar{position:fixed; top:0; left:-400px; bottom:0; background-color:#0a112d; padding:50px 5px 5px; width:340px; z-index:4; overflow:scroll;}
+.sidebar-box.opn .sidebar{animation:mymove 2s 1;  animation-delay: -0.8s; left:0; z-index:10;}
+@keyframes mymove{ from {left:-400px;} to{left:0;} }
+.sidebar .close-btn{position:absolute; top:7px; left:7px; height:20px; width:20px; display:inline-block; background-color:transparent; cursor:pointer; border:none;}
+.sidebar .close-btn:before, .sidebar .close-btn:after{content:' '; position:absolute; left:15px; height:20px; width:2px; background-color:#848896;}
+.sidebar .close-btn:before{transform:rotate(45deg);}.sidebar .close-btn:after{transform:rotate(-45deg);}
+.search-box{display:block; border-top:1px solid #323850; clear:both; overflow:hidden; position:relative; padding:20px 10px; margin-bottom:10px;}
+.search-txt{border:1px solid #323850; border-radius:5px; background-color:transparent; padding:12px 40px 12px 10px; font-size:14px; display:block; width:100%; color:#ffffff;}
+.search-txt:hover{border-color:#39405d;}
+.search{background-color:transparent; border:none; padding:5px; cursor:pointer; position:absolute; right:19px; top:24px;}
+.sidebar-menu{display:block;}
+.sidebar-menu > .directLink{display:block; clear:both; overflow:hidden;}.sidebar-menu > .directLink > a{display:block; padding:12px 10px 8px; color:#f7f7f8; font-size:14px;}
+.overlay{display:none; position:fixed; top:0; bottom:0; left:0; right:0; z-index:3; background-color:rgba(0, 0, 0, 0.5);}
+.sidebar-box.opn .overlay{display:block; transition-delay:2s;}
+.dropdown-menu{position:relative;}.dropdown-menu.act, .sidebar-menu > .directLink > a:hover{background-color:#1c233e;}
+.dropdown-menu:after{content:''; position:absolute; top:10px; right:18px; border:solid #f7f7f8; border-width:0 2px 2px 0; padding:5px; display:inline-block; transform: rotate(45deg); -webkit-transform:rotate(45deg);}.dropdown-menu.act:after{transform: rotate(135deg); -webkit-transform:rotate(-135deg); top:17px;}
+.dropdown-item{max-height:0; overflow:hidden; transition:max-height 0.2s ease-out;}
+.dropdown-menu.act + .dropdown-item{border-bottom:1px solid #323850; margin-bottom:10px; padding:10px 0;}
+.dropdown-item a{display:inline-block; width:49%; color:#f7f7f8; padding:8px 10px; font-size:14px;}
+		  </style>
+		  <script>
+			function sideMenu(){
+				var menuId = document.getElementById("sidebar-box");
+				menuId.classList.toggle("opn");
+			}
+			var accCount = document.getElementsByClassName("dropdown-menu");
+			for (var i=0; i < accCount.length; i++){	
+				accCount[i].addEventListener("click", function(){
+				this.classList.toggle("act");	
+				var panel = this.nextElementSibling;
+				if(panel.style.maxHeight){ panel.style.maxHeight = null; } 
+				else{  panel.style.maxHeight = panel.scrollHeight + "px"; }
+				});	
+			}
+			</script>
+		<!--  \ property / -->
+        <main id="contentCntr">
+        <div class="sectionBox centered">
+        <article class="leftsection">
+        	<div class="sliderP">                
+                <div class="one-time">
+						<div class="item">
+							<div class="property">
+								<div class="image">
+									<img src="images/img_slide_1.jpg" alt="">
+                                </div>
+							</div>
+						</div>
+                        <div class="item">
+							<div class="property">
+								<div class="image">
+									<img src="images/img_slide_1.jpg" alt="">
+                                </div>
+							</div>
+						</div>
+                        <div class="item">
+							<div class="property">
+								<div class="image">
+									<img src="images/img_slide_1.jpg" alt="">
+                                </div>
+							</div>
+						</div>
+                        <div class="item">
+							<div class="property">
+								<div class="image">
+									<img src="images/img_slide_1.jpg" alt="">
+                                </div>
+							</div>
+						</div>
+                        <div class="item">
+							<div class="property">
+								<div class="image">
+									<img src="images/img_slide_1.jpg" alt="">
+                                </div>
+							</div>
+						</div>
+						
+					</div>
+            </div>
+            <div class="contetBody">
+            <h1>Ruby Park Co Operative Housing Society, Pragathi Nagar</h1>
+            <p>Rs. 29,00,000 onwards</p>
+            <p>By Agent: <span>Rajiv Bhatia</span></p>
+            <div class="socailIcon"><a href="#" class="social-btn"><img src="images/facebook.svg" alt=""></a> <a href="#" class="social-btn"><img src="images/instagram.png" alt=""></a> <a href="#" class="social-btn"><img src="images/twitter.svg" alt=""></a> <a href="#" class="social-btn"><img src="images/whatsapp.svg" alt=""></a> <a href="#" class="social-btn fr"><img src="images/group-260.svg" alt=""></a></div>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+            <div class="request"><a href="#" class="button" title="Request a call back"><img src="images/phone-call.svg" alt="Request a call back"/> Request a call back</a> <a href="#" class="button nobg" title="Book a Site Visit">Book a Site Visit</a> <a href="#" class="button nobg" title="Send Enquiry">Send Enquiry</a></div>
+            
+            
+            </div>
+            <div class="detailBox">
+            	<div class="innerbox">
+                <h2>Details</h2>
+            	<ul class="">
+                	<li><span>Location</span> Pragathi Nagar           </li>
+                    <li><span>Parking</span>  Yes 3 Vehicles</li>
+                    <li><span>Lift</span> Yes</li>
+                    <li><span>Floor Number</span> 7th (Total 19)</li>
+                    <li><span>Covered Area (sqft)</span> 1588 sqft</li>
+                    <li><span>Width</span> 40</li>
+                    <li><span>Length</span> 39</li>
+                    <li><span>Bedrooms</span> 3</li>
+                    <li><span>Flooring</span> Marble and wooden</li>
+                    <li><span>Furnishing</span> Unfurnished</li>
+                    <li><span>Configuration</span> 3 Bathroom, 2 Balcony, 1 Pooja Room, 1 Servant room</li>
+                    <li><span>Construction Status</span> Under Construction</li>
+                    <li><span>Facing</span> East</li>
+                </ul>
+                </div>
+                <div class="innerbox">
+                <h2>Additional Details</h2>
+                <ul>
+                	<li><span>Maintenance  </span> 2499 Per Month</li>
+                    <li><span>Other Facilities</span> Power Backup</li>
+                    <li><span>Other Charges</span> Reserved Parking No</li>
+                </ul>
+                </div>
+            </div>	
+            
+        </article>
+        
+        <article class="rightsection">
+        	<div class="prop_locator">
+            	<div class="title"><h3>Property Locator</h3></div>
+                <div class="commonL"><div class="image"><img alt="" src="images/img_gmap_1.jpg" width="364" height="100%" /></div></div>
+            </div>
+            
+            <div class="prop_locator mtop">
+            	<div class="title"><h3>Property Locator</h3> <a href="#" class="view">View All &gt;&gt;</a></div>                
+                <div class="commonL">
+                <div class="image"><img alt="" src="images/img_prop_1.jpg" width="364" height="100%" /><div class="detail">2,3,4 BHK</div></div>
+                <div class="text">
+                    <h6>Ruby Park Co Operative Housing Society, Saket</h6>
+    
+                    <div class="price">Rs. 29,00,000 onwards</div>
+                </div>
+                
+                </div>
+                <div class="commonL mtop mbot">
+                <div class="image"><img alt="" src="images/img_prop_1.jpg" width="364" height="100%" /><div class="detail">2,3,4 BHK</div></div>
+                <div class="text">
+                    <h6>Ruby Park Co Operative Housing Society, Saket</h6>
+    
+                    <div class="price">Rs. 29,00,000 onwards</div>
+                </div>
+                
+                </div>
+            </div>
+        </article>
+        
+        </div>
+        <div class="properyN">
+            <!--  / propertie box \ -->
+				<div class="propertieBox centered">
+					<div class="title">
+						<h3>New Properties</h3>
+
+						<a href="#" class="view">View All >></a>
+					</div>
+
+					<div class="block">
+						<div class="item">
+							<div class="card-propertie">
+								<div class="image">
+									<img src="images/img_prop_172.jpg" alt="">
+								</div>
+								
+								<div class="text">
+									<h6>Ruby Park Co Operative Housing Society, Saket</h6>
+
+									<div class="price">Rs. 29,00,000 onwards</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="card-propertie">
+								<div class="image">
+									<img src="images/img_prop_172.jpg" alt="">
+								</div>
+								
+								<div class="text">
+									<h6>Ruby Park Co Operative Housing Society, Saket</h6>
+
+									<div class="price">Rs. 29,00,000 onwards</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="card-propertie">
+								<div class="image">
+									<img src="images/img_prop_172.jpg" alt="">
+								</div>
+								
+								<div class="text">
+									<h6>Ruby Park Co Operative Housing Society, Saket</h6>
+
+									<div class="price">Rs. 29,00,000 onwards</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="card-propertie">
+								<div class="image">
+									<img src="images/img_prop_172.jpg" alt="">
+								</div>
+								
+								<div class="text">
+									<h6>Ruby Park Co Operative Housing Society, Saket</h6>
+
+									<div class="price">Rs. 29,00,000 onwards</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="card-propertie">
+								<div class="image">
+									<img src="images/img_prop_172.jpg" alt="">
+								</div>
+								
+								<div class="text">
+									<h6>Ruby Park Co Operative Housing Society, Saket</h6>
+
+									<div class="price">Rs. 29,00,000 onwards</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="card-propertie">
+								<div class="image">
+									<img src="images/img_prop_172.jpg" alt="">
+								</div>
+								
+								<div class="text">
+									<h6>Ruby Park Co Operative Housing Society, Saket</h6>
+
+									<div class="price">Rs. 29,00,000 onwards</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--  \ propertie box / -->
+            </div>
+        </main>
+        
+        <!--  \ property / -->
+
+			<!--  / footer container \ -->
+			<footer id="footerCntr" class="centered">
+				<div class="left">
+					<a href="#" class="logo"><img src="images/logo.png" alt=""></a>
+
+					<div class="contact">
+						<h4>Contact us</h4>
+
+						<address>
+							<span>Phone -</span> <a href="#">99xxxxxx99</a><br>
+							<span>Email -</span> <a href="#">yourcompany@yourdomain.com</a>
+						</address>
+
+						<ul class="social">
+							<li><a href="#"><i class="icon-facebook"></i></a></li>
+							<li><a href="#"><i class="icon-twitter"></i></a></li>
+							<li><a href="#"><i class="icon-instagram"></i></a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="right">
+					<ul class="link">
+						<li><a href="#">Others</a></li>
+						<li><a href="#">Sitemap</a></li>
+						<li><a href="#">About us</a></li>
+						<li><a href="#">Terms and Conditions</a></li>
+						<li><a href="#">Privacy Policy</a></li>
+					</ul>
+
+					<div class="copyright">All trademarks, logos and names are properties of their respective owners. All Rights Reserved. © Copyright 2021 Your Company</div>
+				</div>
+			</footer>
+			<!--  \ footer container / -->
+		</div>
+		<!--  \ main container / -->
+
+	</div>
+	<!--  \ wrapper / -->
+    
+    			<!--  \ header / -->
+			<!--  / help box \ -->
+				<div class="helpBox">
+					<a href="#" class="help-btn"><img src="images/help.svg" alt=""></a>
+
+					<div class="help">
+						<div class="block">
+							<div class="text">
+								<div class="heading">
+									<h6>You</h6>
+
+									<div class="time">10:55 AM</div>
+
+									<div class="seen">Seen</div>
+								</div>
+
+								<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem</p>
+							</div>
+
+							<div class="image">
+								<img src="images/banner-img.png" alt="">
+							</div>
+						</div>
+
+						<div class="block reverse">
+							<div class="text">
+								<div class="heading">
+									<h6>Agent</h6>
+
+									<div class="time">11:10 AM</div>
+								</div>
+
+								<p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia</p>
+							</div>
+
+							<div class="image">
+								<img src="images/banner-img.png" alt="">
+							</div>
+						</div>
+
+						<div class="block">
+							<div class="text">
+								<div class="heading">
+									<h6>You</h6>
+
+									<div class="time">10:55 AM</div>
+
+									<div class="seen">Seen</div>
+								</div>
+
+								<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem</p>
+							</div>
+
+							<div class="image">
+								<img src="images/banner-img.png" alt="">
+							</div>
+						</div>
+
+						<div class="block reverse">
+							<div class="text">
+								<div class="heading">
+									<h6>Agent</h6>
+
+									<div class="time">11:10 AM</div>
+								</div>
+
+								<p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia</p>
+							</div>
+
+							<div class="image">
+								<img src="images/banner-img.png" alt="">
+							</div>
+						</div>
+
+						<div class="block reverse">
+							<div class="text">
+								<div class="heading">
+									<h6>Agent</h6>
+
+									<div class="time">11:10 AM</div>
+								</div>
+
+								<p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia</p>
+							</div>
+
+							<div class="image">
+								<img src="images/banner-img.png" alt="">
+							</div>
+						</div>
+
+						<div class="form">
+							<form accept="#">
+								<input type="text" placeholder="Type your message">
+								<button type="button" class="btn"></button>
+							</form>	
+						</div>
+						
+						<a href="#" class="close"><i class="icon-clear"></i></a>
+					</div>
+				</div>
+				<!--  \ help box / -->
+
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script src="scripts/slick.js"></script>
+	<script src="scripts/main.js"></script>
+    <script>$('.one-time').slick({
+  dots: true,
+  infinite: true,
+  speed: 300,
+  slidesToShow: 1,
+  adaptiveHeight: true
+});</script>
+</body>
+
+</html>
