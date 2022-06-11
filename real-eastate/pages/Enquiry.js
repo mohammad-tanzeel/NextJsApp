@@ -33,6 +33,7 @@ const handleSubmit = (e) => {
 
         {/* < />!--  \ property / --> */}
         <main id="contentCntr">
+          <div>Zakir</div>
           <div class="sectionBox centered">
             {/* < />!--  \ propertie box / --> */}
 
