@@ -22,13 +22,11 @@ const handleSubmit = (e) => {
       message
   }
   console.log(data);
-  
+
 }
 
   return (
-    <><div id="wrapper">
-      
-      Test
+    <><div id="wrapper">      
       <div id="mainCntr">
         {/* < />!--  / header \ --> */}
             <Header></Header>
