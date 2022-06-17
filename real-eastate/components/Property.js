@@ -10,10 +10,7 @@ export default function Property() {
     <><div id="wrapper">
       
       <div id="mainCntr">
-        {/* < />!--  / header \ --> */}
-            <Header></Header>
-
-        {/* < />!--  \ property / --> */}
+         {/* < />!--  \ property / --> */}
         <main id="contentCntr">
           <div class="sectionBox centered">
             <article class="leftsection">
@@ -178,9 +175,6 @@ export default function Property() {
         </main>
         {/* < />!--  \ property / --> */}
 
-        {/* < />!--  / footer container \ --> */}
-        <Footer></Footer>
-        {/* < />!--  \ footer container / --> */}
       </div>
       {/* < />!--  \ main container / --> */}
 

@@ -1,6 +1,7 @@
 import {useState, React} from 'react'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
+
 // import Script from 'next/script';
 // import Slider from '../components/Slider';
 
@@ -12,7 +13,7 @@ const [email, setEmail] = useState('')
 const [message, setMessage] = useState('')
 const [submitted, setSubmitted] = useState(false)
 
-const handleSubmit = (e) => {
+const handleSubmit = async (e) => {
   e.preventDefault()
   console.log('Sending')
 
@@ -21,7 +22,17 @@ const handleSubmit = (e) => {
       email,
       message
   }
-  console.log(data);
+
+  const res = await fetch('http://localhost:3002/api/submit-enquiry-form', {
+      method: 'POST',
+      body: JSON.stringify({ data }),
+    });
+    // Success if status code is 201
+    if (res.status === 201) {
+      toast('Thank you for contacting us!', { type: 'success' });
+    } else {
+      toast('Please re-check your inputs.', { type: 'error' });
+    }
 
 }
 
@@ -29,7 +40,7 @@ const handleSubmit = (e) => {
     <><div id="wrapper">      
       <div id="mainCntr">
         {/* < />!--  / header \ --> */}
-            <Header></Header>
+            {/* <Header></Header> */}
 
         {/* < />!--  \ property / --> */}
         <main id="contentCntr">
@@ -58,7 +69,7 @@ const handleSubmit = (e) => {
         </main>
         {/* < />!--  \ property / --> */}
 
-        <Footer></Footer>
+        {/* <Footer></Footer> */}
       </div>
       {/* < />!--  \ main container / --> */}
 
