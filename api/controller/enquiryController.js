@@ -1,11 +1,15 @@
 require('../db/db');
 const Enquiry = require('../models/enquiry');
 
-exports.submitEnquiry = async (req, res) => {
-    
+exports.submitData =  (req, res) => {
         const query = {};
         Enquiry.find(query, (err, enquiries) => {
-          if (err) return res.send(err);
+          if (err)     { res.status(400).json({
+            status_code: 0,
+            error_msg: err,
+          });
+        }
+      
           const returnEnquiry = enquiries.map((enquiry) => {
             //   console.log(enquiry);
             const newEnquiry = enquiry.toJSON();
@@ -14,18 +18,19 @@ exports.submitEnquiry = async (req, res) => {
           });
           res.send(returnEnquiry);
         });
+        // res.send({"message":"Yes got data"});
  
 }
 
 exports.submitEnquiryForm = async (req, res) => {
     
-      const enquiry = new Enquiry( req.body);
-      console.log("Hello "+req);
-      if (!req.body.name) {
-        res.status(400);
-        res.send('Name is required');
+      const enquiry = new Enquiry(req.body);
+      console.log("Hello ",req.body.name);
+      if (!req.body) {
+        // res.status(400);
+        return res.status(400).send('Name is required');
       }
       enquiry.save();
-      res.status(201);
-      res.send(enquiry);
+     
+      res.status(201).send(enquiry);
 }
