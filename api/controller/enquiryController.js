@@ -4,7 +4,8 @@ const Enquiry = require('../models/enquiry');
 exports.submitData =  (req, res) => {
         const query = {};
         Enquiry.find(query, (err, enquiries) => {
-          if (err)     { res.status(400).json({
+          if (err)   
+            { res.status(400).json({
             status_code: 0,
             error_msg: err,
           });

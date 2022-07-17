@@ -70,6 +70,7 @@ a { transition: all 0.3s ease-in-out; text-decoration: none; }
 .mobileMenu span:after { position: absolute; left: 0; display: block; width: 100%; height: 3px; border-radius: 5px; background-color: #fff; transition-duration: 0.2s, 0.2s; content: ''; }
 .mobileMenu span:before { top: -7px; }
 .mobileMenu span:after { bottom: -7px; }
+.main-content{min-height: 250px;}
 
 
 /* ### banner box ### */

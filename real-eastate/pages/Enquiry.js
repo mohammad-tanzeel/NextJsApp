@@ -1,22 +1,12 @@
 import {useState, useEffect, React} from 'react'
 import axios from 'axios';
 
-// import Script from 'next/script';
-// import Slider from '../components/Slider';
-
-
 export default function Enquiry() {
 
   const initialValues = { name: "", email: "", message:""};
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
-
-
-// const [name, setName] = useState('')
-// const [email, setEmail] = useState('')
-// const [message, setMessage] = useState('')
-// const [submitted, setSubmitted] = useState(false)
 
 const handleChange = (e) => {
   console.log(e);
@@ -33,46 +23,45 @@ const handleSubmit = (e) => {
 };
 
 
-useEffect( () =>  {
-  console.log(formErrors);
-  if (Object.keys(formErrors).length === 0 && isSubmit) {
-    console.log("submitted");
-    console.log(formValues.name);
-    console.log(formValues.email);
-    const postData = async () => {
-      console.log(formValues);
-      let details = {
-        name: formValues.name,
-        email: formValues.email,
-        message: formValues.message,
-      };
-      //const detailsdata = JSON.stringify(details);
+// useEffect( () =>  {
+//   console.log(formErrors);
+//   if (Object.keys(formErrors).length === 0 && isSubmit) {
+//     // console.log("submitted");
+//     // console.log(formValues.name);
+//     // console.log(formValues.email);
+//     const postData = async () => {
+//       console.log(formValues);
+//       let details = {
+//         name: formValues.name,
+//         email: formValues.email,
+//         message: formValues.message,
+//       };
+//       //const detailsdata = JSON.stringify(details);
 
-      const res = await axios({
-        method: 'post',
-        headers: { 'Content-Type': 'application/json' },
-        url: 'http://localhost:3002/submit-enquiry-form',
-        data: details,
-        // json:true,
-      }).then(function (response) {
-        return response.data;
-        console.log(response.data);
-      });
-      console.log(res);
-    // Success if status code is 201
-    if (res._id != '') {
-      console.log(res);
-      console.log("Thank you for contacting us!");
-      // toast('Thank you for contacting us!', { type: 'success' });
-    } else {
-      console.log("'Please re-check your inputs");
-      // toast('Please re-check your inputs.', { type: 'error' });
-    }
-  }
-  postData()
-
-  }
-}, [formErrors]);
+//       const res = await axios({
+//         method: 'post',
+//         headers: { 'Content-Type': 'application/json' },
+//         url: 'http://localhost:3002/submit-enquiry-form',
+//         data: details,
+//         // json:true,
+//       }).then(function (response) {
+//         return response.data;
+//         console.log(response.data);
+//       });
+//       console.log(res);
+//     // Success if status code is 201
+//     if (res._id != '') {
+//       console.log(res);
+//       console.log("Thank you for contacting us!");
+//       // toast('Thank you for contacting us!', { type: 'success' });
+//     } else {
+//       console.log("'Please re-check your inputs");
+//       // toast('Please re-check your inputs.', { type: 'error' });
+//     }
+//   }
+//   postData()
+//   }
+// }, [formErrors]);
 
 
 const validate = (values) => {
@@ -139,15 +128,8 @@ const validate = (values) => {
             </div>
           </div>
         </main>
-        {/* < />!--  \ property / --> */}
-
-        {/* <Footer></Footer> */}
       </div>
-      {/* < />!--  \ main container / --> */}
-
     </div>
-    {/* < /></>!--  \ wrapper / --> */}
-    
 				        </>
   )
 }

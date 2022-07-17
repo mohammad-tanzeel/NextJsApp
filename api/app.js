@@ -32,6 +32,7 @@ app.use(function (req, res, next) {
 
 
 require('./routes/enquiry.js')(app);
+require('./routes/user.js')(app);
 
 
 app.listen(PORT, () => {
