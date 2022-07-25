@@ -40,6 +40,8 @@ exports.user_login = async function (req, res) {
   try {
     // Get user input
     const { email, password } = req.body;
+    // const email = req.body.email;
+    // const password = req.body.password;
 
     // Validate user input
     if (!(email && password)) {
@@ -59,10 +61,18 @@ exports.user_login = async function (req, res) {
         }
       );
 
+      const refresToken = jwt.sign(
+        { user_id: user._id, email },
+        'refresh',
+        {
+          expiresIn: "2d",
+        }
+      );
       // save user token
       user.token = token;
-
+      user.refresToken = refresToken;
       // user
+      console.log(user);
       res.status(200).json(user);
     }
     res.status(400).send({ error: "Invalid Credentials" });

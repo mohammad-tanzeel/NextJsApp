@@ -16,6 +16,8 @@ const UsersSchema = mongoose.Schema({
 		required: true,
 	},
 	token: { type: String },
+	refresToken: { type: String }
+	
 });
 
 // function validateUser(user) {
